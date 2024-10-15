@@ -1,0 +1,89 @@
+/* Navbar Container */
+.navbar {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #ffffff;
+    padding: 15px 7%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sleek shadow */
+    position: sticky; /* Stick to the top */
+    top: 0;
+    z-index: 1000;
+    box-sizing: border-box; /* Ensure padding doesn’t affect width */
+}
+
+/* Logo */
+.logo {
+    height: 40px; /* Adjust based on the actual size of your logo */
+    cursor: pointer;
+}
+
+/* Navbar List */
+ul {
+    flex: 1;
+    list-style: none;
+    display: flex;
+    justify-content: center; /* Center the links */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar List Items */
+ul li {
+    margin: 0 20px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative; /* For hover underline effect */
+}
+
+/* Hover Effect - Underline on hover */
+ul li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #007bff;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+ul li:hover::after {
+    width: 100%;
+}
+
+/* Toggle icon for mobile navigation */
+.toggle-icon {
+    height: 30px;
+    cursor: pointer;
+    display: none; /* Hide by default */
+}
+
+/* Hover effect on list items */
+ul li:hover {
+    color: #007bff;
+}
+
+/* Mobile-friendly Adjustments */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 10px 5%;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    ul li {
+        margin: 10px 0; /* Increase space between links on mobile */
+    }
+
+    .toggle-icon {
+        display: block; /* Show toggle icon on smaller screens */
+    }
+}
